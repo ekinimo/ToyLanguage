@@ -1,0 +1,55 @@
+[ [ ] reshape ] [ drop ] def
+[ [ ] s_reshape ] [ s_drop ] def
+[ [ 0 0 ] reshape ] [ dup ] def
+[ [ 0 0 ] s_reshape ] [ s_dup ] def
+[ [ 0 1 ] reshape ] [ swap ] def
+[ [ 0 1 ] reshape ] [ s_swap ] def
+[ 1 i_add ] [ ++ ] def
+[ 1 i_sub ] [ -- ] def
+[ dup 0 i_eq [ ] [ dup -- countDown ] if ] [ countDown ]  def
+[ dup 3 i_less [ drop 1 ] [ -- dup -- fib swap fib i_add ] if ] [ fib ] def
+[ dup 0 i_eq [ drop 1 ] [ dup -- i_fac i_mul ] if ] [ i_fac ] def
+[ dup 0 d_eq [ drop 1. ] [ dup 1. d_sub d_fac d_mul ] if ] [ d_fac ] def
+[ [ 0 1 0 i_add ] reshape ] [ add_burry ] def
+[ dup 0 i_eq [ drop apply ] [ -- swap s_dup swap hmm ] if ] [ hmm ] def
+[ [ 0 1 add_burry ] swap hmm i_add ] [ fib2 ] def
+
+{ [ 1 fib ] 
+  [ 2 fib ]
+  [ 3 fib ]
+  [ 4 fib ] 
+  [ 5 fib ]
+} vs_eval
+{ [ 1 fib2 ] 
+  [ 2 fib2 ]
+  [ 3 fib2 ]
+  [ 4 fib2 ] 
+  [ 5 fib2 ]
+  [ 6 fib2 ]
+  [ 7 fib2 ]
+  [ 8 fib2 ]
+  [ 9 fib2 ]
+   
+  
+} vs_eval
+
+{ [ 1. d_fac ] 
+  [ 1. d_fac ]
+  [ 3. d_fac ]
+  [ 4. d_fac ] 
+  [ 5. d_fac ]
+  [ 6. d_fac ]
+  [ 7. d_fac ]
+  [ 8. d_fac ]
+  [ 9. d_fac ]
+  [ 10. d_fac ]
+  [ 11. d_fac ]
+  [ 12. d_fac ]
+  [ 13. d_fac ]
+  [ 14. d_fac ]
+  [ 15. d_fac ]
+  [ 16. d_fac ]
+  [ 17. d_fac ]
+  [ 18. d_fac ]
+  [ 19. d_fac ]
+} vs_eval
